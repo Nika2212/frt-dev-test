@@ -1,0 +1,122 @@
+@import 'src/assets/styles/mixins';
+
+.popup {
+  position: relative;
+
+  padding: 70px 80px 80px 123px;
+
+  width: 646px;
+  min-width: 358px;
+  height: auto;
+  max-height: 570px;
+
+  background-color: #FFFFFF;
+
+  box-shadow: 0 0 30px #00000029;
+
+  .popup-abstract {
+    position: absolute;
+
+    right: 20px;
+    top: 20px;
+  }
+
+  .popup-header {
+    @include flex();
+
+    width: 100%;
+    height: 48px;
+
+    h3 {
+      font-size: 36px;
+      font-weight: 500;
+      color: #000000;
+    }
+  }
+
+  .popup-body {
+    margin-top: 60px;
+
+    width: 100%;
+    height: auto;
+
+    .form-row {
+      @include flex();
+
+      position: relative;
+
+      width: 100%;
+      height: 48.5px;
+
+      column-gap: 5px;
+
+      .input-icon {
+        position: absolute;
+
+        left: -40px;
+        bottom: 9px;
+
+        cursor: default;
+      }
+
+      mat-form-field {
+        width: 100%;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .popup-actions {
+    margin-top: 40px;
+
+    width: 100%;
+    height: 41px;
+
+    .action-row {
+      @include flex(row, space-between, center);
+
+      width: 100%;
+      height: 100%;
+
+      .submit-btn {
+        width: 142px;
+        height: 41px;
+
+        border-radius: 41px;
+
+        font-size: 16px;
+        color: #FFFFFF;
+
+        &.primary {
+          background-color: #44a0d3;
+        }
+
+        &.secondary {
+          background-color: #F89797;
+        }
+
+        &:disabled {
+          background-color: #c6c6c6;
+
+          color: #979797;
+        }
+      }
+
+      .form-valid-message {
+        font-size: 16px;
+        font-weight: 300;
+
+        &.valid {
+          color: #44D36A;
+        }
+
+        &.invalid {
+          color: #F89797;
+        }
+      }
+    }
+  }
+}

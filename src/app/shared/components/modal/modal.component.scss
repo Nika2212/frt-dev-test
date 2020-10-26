@@ -1,0 +1,29 @@
+@import 'src/assets/styles/mixins';
+
+.modal-component {
+  position: fixed;
+
+  left: 0;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  z-index: 5;
+
+  .overlay {
+    @include flex(row, center, center);
+
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0, 0, 0, .5);
+
+    .content {
+      position: relative;
+
+      width: auto;
+      height: auto;
+    }
+  }
+}

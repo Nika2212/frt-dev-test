@@ -1,1 +1,109 @@
-<p>settings works!</p>
+<div class="settings-component">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-4">
+        <div class="setting-block">
+          <div class="user-general-information">
+            <div class="user-avatar">
+              <img src="" alt="">
+
+              <div class="badge">
+                <span class="material-icons">vpn_key</span>
+              </div>
+            </div>
+            <div class="user-name">
+              <label>Danniel<br>Blichman</label>
+            </div>
+            <div class="user-email">
+              <label>sample@gmail.com</label>
+            </div>
+
+            <button class="main-action-btn invite-resent-btn">Resent the invite</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="setting-block">
+          <div class="block-title">
+            <h3>Details</h3>
+          </div>
+
+          <form class="user-details-form">
+            <div class="user-status">
+              <mat-slide-toggle color="primary"></mat-slide-toggle>
+              <label>The user is <b>Active</b></label>
+            </div>
+
+            <div class="form-row">
+              <mat-form-field appearance="legacy">
+                <mat-label>* First Name</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+
+            <div class="form-row">
+              <mat-form-field appearance="legacy">
+                <mat-label>* Last Name</mat-label>
+                <input matInput>
+              </mat-form-field>
+            </div>
+
+            <div class="form-row">
+              <mat-form-field appearance="legacy">
+                <mat-label>* Role</mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let role of availableRoles" [value]="role">
+                    {{ role }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+
+            <button class="main-action-btn update-btn">Save Changes</button>
+          </form>
+        </div>
+      </div>
+      <div class="col-xl-4">
+        <div class="setting-block permission-block">
+          <div class="block-title">
+            <h3>Permissions</h3>
+            <label class="info">Admin</label>
+          </div>
+
+          <div class="user-permissions-form">
+            <div class="permission-form-row super-user-row">
+              <label><b>Super Admin</b></label>
+              <mat-slide-toggle color="warn"></mat-slide-toggle>
+            </div>
+
+            <div *ngFor="let i of [1, 2, 3]" class="permission-form-row">
+              <div #group class="permission-group">
+                <div class="permission-group-heading">
+                  <div class="dropdown-icon">
+                    <span class="material-icons">keyboard_arrow_right</span>
+                  </div>
+                  <label frtExpander [list]="group" class="permission-name">Permission Group 1</label>
+                  <mat-slide-toggle color="warn"></mat-slide-toggle>
+                </div>
+                <ul class="permission-group-list">
+                  <li class="permission-group-list-item">
+                    <label>Permission 1</label>
+                    <mat-slide-toggle color="warn"></mat-slide-toggle>
+                  </li>
+                  <li class="permission-group-list-item">
+                    <label>Permission 2</label>
+                    <mat-slide-toggle color="warn"></mat-slide-toggle>
+                  </li>
+                  <li class="permission-group-list-item">
+                    <label>Permission 3</label>
+                    <mat-slide-toggle color="warn"></mat-slide-toggle>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

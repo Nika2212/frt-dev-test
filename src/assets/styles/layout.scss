@@ -1,0 +1,17 @@
+.application {
+  width: 100%;
+  height: 100%;
+
+  .header-container {
+    width: 100%;
+    height: 211px;
+  }
+
+  .content-container {
+    padding-top: 63px;
+    padding-bottom: 63px;
+
+    width: 100%;
+    height: calc(100% - 211px);
+  }
+}

@@ -1,0 +1,30 @@
+@import 'src/assets/styles/mixins';
+
+.remove-user-confirm-popup {
+  .popup-body {
+    margin-top: 20px;
+
+    .form-row {
+      @include flex(row, space-between, flex-start);
+
+      border-bottom: 1px solid #D8D8D8;
+
+      .input-icon {
+        bottom: 22px;
+      }
+
+      .user-status {
+        font-size: 16px;
+        font-weight: 700;
+
+        &.active {
+          color: #44A0D3;
+        }
+
+        &.inactive {
+          color: #F89797;
+        }
+      }
+    }
+  }
+}

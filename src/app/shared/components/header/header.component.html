@@ -1,1 +1,31 @@
-<p>header works!</p>
+<header class="header-component">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <nav class="header-nav">
+          <div class="header-abstract">
+            <button *ngIf="currentPage === '/dashboard'" mat-fab color="primary">
+              <mat-icon>add</mat-icon>
+            </button>
+            <button *ngIf="currentPage === '/settings'" mat-fab color="primary">
+              <mat-icon>settings</mat-icon>
+            </button>
+          </div>
+
+          <div class="header-title">
+            <h1 *ngIf="currentPage === '/dashboard'">Project Access</h1>
+            <h1 *ngIf="currentPage === '/settings'">User Setup</h1>
+          </div>
+
+          <div *ngIf="currentPage === '/dashboard'" class="filter-field">
+            <mat-form-field appearance="legacy">
+              <mat-label>Type to filter the table</mat-label>
+              <input matInput placeholder="Placeholder">
+              <mat-icon matSuffix>search</mat-icon>
+            </mat-form-field>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>

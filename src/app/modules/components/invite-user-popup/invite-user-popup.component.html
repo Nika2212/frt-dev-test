@@ -1,1 +1,60 @@
-<p>invite-user-popup works!</p>
+<div class="popup invite-user-popup">
+  <div class="popup-abstract">
+    <button mat-icon-button>
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+
+  <div class="popup-header">
+    <h3>Invite New User</h3>
+  </div>
+  <div class="popup-body">
+    <form>
+      <div class="form-row">
+        <div class="input-icon">
+          <span class="material-icons">face</span>
+        </div>
+
+        <mat-form-field appearance="legacy">
+          <mat-label>* First Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+        <mat-form-field appearance="legacy">
+          <mat-label>* Last Name</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <div class="input-icon">
+          <span class="material-icons">alternate_email</span>
+        </div>
+
+        <mat-form-field appearance="legacy">
+          <mat-label>* Email</mat-label>
+          <input matInput>
+        </mat-form-field>
+      </div>
+      <div class="form-row">
+        <div class="input-icon">
+          <span class="material-icons">vpn_key</span>
+        </div>
+
+        <mat-form-field appearance="legacy">
+          <mat-label>* Role</mat-label>
+          <mat-select>
+            <mat-option *ngFor="let role of availableRoles" [value]="role">
+              {{ role }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+  <div class="popup-actions">
+    <div class="action-row">
+      <button class="submit-btn mat-primary">Send Invitation</button>
+
+      <small class="form-valid-message"></small>
+    </div>
+  </div>
+</div>
