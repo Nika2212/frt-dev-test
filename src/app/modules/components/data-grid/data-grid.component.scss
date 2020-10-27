@@ -36,13 +36,42 @@
         border-bottom: 2px solid #D8D8D8;
 
         label {
+          position: relative;
+
           font-size: 16px;
           font-weight: 500;
           color: #000000;
 
           opacity: 0.4;
 
-          cursor: pointer;
+          user-select: none;
+
+          span {
+            position: absolute;
+
+            right: -30px;
+            top: -1px;
+          }
+        }
+
+        span {
+          display: none;
+        }
+
+        &.selected {
+          label {
+            opacity: 1;
+          }
+
+          span {
+            display: inline-block;
+          }
+        }
+
+        &.selected.inverted {
+          span {
+            transform: rotate(180deg);
+          }
         }
       }
     }
@@ -215,7 +244,7 @@
 
           min-width: 36px;
 
-          opacity: 0.75;
+          opacity: 0.3;
 
           &.selected {
             opacity: 1;

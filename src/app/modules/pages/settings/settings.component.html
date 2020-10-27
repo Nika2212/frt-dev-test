@@ -73,7 +73,7 @@
           <div class="user-permissions-form" [ngClass]="{'disabled' : !newSelectedUser.isActive}">
             <div class="permission-form-row super-user-row">
               <label><b>Super Admin</b></label>
-              <mat-slide-toggle [disabled]="!newSelectedUser.isActive" color="warn"></mat-slide-toggle>
+              <mat-slide-toggle [disabled]="!newSelectedUser.isActive" [(ngModel)]="newSelectedUser.isSuperAdmin" color="warn"></mat-slide-toggle>
             </div>
 
             <div *ngFor="let permissionGroup of newSelectedUser.permissionGroup" class="permission-form-row">

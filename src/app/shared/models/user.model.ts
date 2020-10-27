@@ -9,4 +9,5 @@ export class User {
   public isActive: boolean;
   public role: Roles;
   public permissionGroup: PermissionGroup[];
+  public isSuperAdmin: boolean;
 }

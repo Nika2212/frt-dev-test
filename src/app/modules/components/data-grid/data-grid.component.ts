@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, S
 import { User } from '../../../shared/models/user.model';
 import { BaseComponent } from '../../../core/helpers/base-component';
 import { PaginatorModel } from '../../../shared/models/paginator.model';
+import { Sort } from '../../../shared/models/sort.model';
+import { SortDirection } from '../../../core/enums/sort-direction';
 
 @Component({
   selector: 'frt-data-grid',
@@ -18,6 +20,7 @@ export class DataGridComponent extends BaseComponent implements OnInit, OnChange
 
   public displayedUsers: User[];
   public paginator: PaginatorModel;
+  public sort: Sort;
 
   constructor() {
     super();
@@ -57,7 +60,23 @@ export class DataGridComponent extends BaseComponent implements OnInit, OnChange
     this.displayedUsers = paginatedUsers;
   }
 
-  private applySort(): void {}
+  private applySort(): void {
+    if (!this.sort) {
+      this.sort = new Sort();
+      this.sort.propertyName = 'firstName';
+      this.sort.direction = SortDirection.ASC;
+    }
+
+    this.displayedUsers = this.displayedUsers.sort((a, b) => {
+      if (a[this.sort.propertyName] > b[this.sort.propertyName]) {
+        return this.sort.direction === SortDirection.ASC ? 1 : -1;
+      } else if (a[this.sort.propertyName] < b[this.sort.propertyName]) {
+        return this.sort.direction !== SortDirection.ASC ? 1 : -1;
+      } else {
+        return a.id > b.id ? 1 : -1;
+      }
+    });
+  }
 
   private updateGrid(): void {
     this.displayedUsers = this.users;
@@ -114,6 +133,18 @@ export class DataGridComponent extends BaseComponent implements OnInit, OnChange
 
   public onNext(): void {
     this.paginator.next();
+    this.updateGrid();
+  }
+
+  public onSort(propertyName: string): void {
+    this.sort.propertyName = propertyName;
+
+    if (this.sort.direction === SortDirection.ASC) {
+      this.sort.direction = SortDirection.DES;
+    } else {
+      this.sort.direction = SortDirection.ASC;
+    }
+
     this.updateGrid();
   }
 }

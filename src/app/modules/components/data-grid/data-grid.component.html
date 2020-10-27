@@ -1,13 +1,13 @@
 <div class="grid">
   <div class="grid-table">
     <div class="table-header">
-      <div class="table-col">
-        <label>USER</label>
+      <div [ngClass]="{'selected' : sort.propertyName === 'firstName', 'inverted' : sort.propertyName === 'firstName' && sort.direction === 'ASC'}" class="table-col">
+        <label class="clickable" (click)="onSort('firstName')">USER <span class="material-icons">arrow_drop_down</span></label>
       </div>
-      <div class="table-col">
-        <label>ROLE</label>
+      <div [ngClass]="{'selected' : sort.propertyName === 'role', 'inverted' : sort.propertyName === 'role' && sort.direction === 'ASC'}"  class="table-col">
+        <label class="clickable" (click)="onSort('role')">ROLE <span class="material-icons">arrow_drop_down</span></label>
       </div>
-      <div class="table-col">
+      <div  class="table-col">
         <label>STATUS</label>
       </div>
       <div class="table-col">
