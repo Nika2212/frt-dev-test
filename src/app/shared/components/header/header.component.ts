@@ -54,4 +54,8 @@ export class HeaderComponent implements OnInit {
 
     this.eventBusService.emit(new EmitEvent(Events.FILTER_USERS, this.filterString));
   }
+
+  public dashboard(): void {
+    this.router.navigate(['dashboard']);
+  }
 }

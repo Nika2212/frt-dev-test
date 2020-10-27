@@ -4,10 +4,13 @@
       <div class="col-xl-12">
         <nav class="header-nav">
           <div class="header-abstract">
+            <button class="back-btn" (click)="dashboard()" *ngIf="currentPage === '/settings'" mat-fab color="primary">
+              <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
             <button (click)="onUserAddClick()" *ngIf="currentPage === '/dashboard'" mat-fab color="primary">
               <mat-icon>add</mat-icon>
             </button>
-            <button *ngIf="currentPage === '/settings'" mat-fab color="primary">
+            <button *ngIf="currentPage === '/settings'" mat-fab color="primary" style="background-color: #C6C6C6">
               <mat-icon>settings</mat-icon>
             </button>
           </div>

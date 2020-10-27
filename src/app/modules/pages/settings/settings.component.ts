@@ -84,5 +84,4 @@ export class SettingsComponent extends BaseComponent implements OnInit {
       this.canUpdate = true;
     }
   }
-
 }

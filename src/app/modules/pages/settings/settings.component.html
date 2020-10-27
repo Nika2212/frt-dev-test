@@ -73,7 +73,7 @@
           <div class="user-permissions-form" [ngClass]="{'disabled' : !newSelectedUser.isActive}">
             <div class="permission-form-row super-user-row">
               <label><b>Super Admin</b></label>
-              <mat-slide-toggle [disabled]="!newSelectedUser.isActive" [(ngModel)]="newSelectedUser.isSuperAdmin" color="warn"></mat-slide-toggle>
+              <mat-slide-toggle [disabled]="!newSelectedUser.isActive" [(ngModel)]="newSelectedUser.isSuperAdmin" color="primary"></mat-slide-toggle>
             </div>
 
             <div *ngFor="let permissionGroup of newSelectedUser.permissionGroup" class="permission-form-row">
@@ -83,12 +83,12 @@
                     <span class="material-icons">keyboard_arrow_right</span>
                   </div>
                   <label frtExpander [list]="group" class="permission-name">{{ permissionGroup.groupName }}</label>
-                  <mat-slide-toggle [disabled]="!newSelectedUser.isActive" [(ngModel)]="permissionGroup.groupState" color="warn"></mat-slide-toggle>
+                  <mat-slide-toggle [disabled]="!newSelectedUser.isActive" [(ngModel)]="permissionGroup.groupState" color="primary"></mat-slide-toggle>
                 </div>
-                <ul class="permission-group-list">
-                  <li *ngFor="let permission of permissionGroup.permissions" class="permission-group-list-item">
+                <ul class="permission-group-list" >
+                  <li *ngFor="let permission of permissionGroup.permissions" class="permission-group-list-item" [ngClass]="{'active' : permission.permissionState }">
                     <label>{{ permission.permissionName }}</label>
-                    <mat-slide-toggle [disabled]="!newSelectedUser.isActive" [(ngModel)]="permission.permissionState" color="warn"></mat-slide-toggle>
+                    <mat-slide-toggle [disabled]="!newSelectedUser.isActive" [(ngModel)]="permission.permissionState" color="primary"></mat-slide-toggle>
                   </li>
                 </ul>
               </div>
