@@ -307,6 +307,12 @@
       &.invite-resent-btn {
         background-color: #7e7ef1;
       }
+
+      &:disabled {
+        background-color: #979797;
+
+        cursor: default;
+      }
     }
 
     &.permission-block {

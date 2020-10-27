@@ -45,8 +45,6 @@ export class InviteUserPopupComponent implements OnInit {
       this.message = 'Good to go';
       this.isInvalid = false;
     }
-
-    console.log(validation);
   }
 
   public onClose(): void {
@@ -59,6 +57,5 @@ export class InviteUserPopupComponent implements OnInit {
     }
 
     this.eventBusService.emit(new EmitEvent(Events.ADD_USER, this.newUserModel));
-    this.eventBusService.emit(new EmitEvent(Events.CLOSE_INVITE_USER_POPUP));
   }
 }

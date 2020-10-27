@@ -6,6 +6,7 @@ import { BaseComponent } from '../../../core/helpers/base-component';
 import { Events } from '../../../core/enums/events';
 import { Router } from '@angular/router';
 import { EmitEvent } from '../../../shared/models/emit-event.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'frt-dashboard',
@@ -20,7 +21,8 @@ export class DashboardComponent extends BaseComponent implements OnInit, OnDestr
   constructor(
     private userService: UserService,
     private eventBusService: EventBusService,
-    private router: Router
+    private router: Router,
+    private snackBar: MatSnackBar
   ) {
     super();
   }
@@ -35,7 +37,14 @@ export class DashboardComponent extends BaseComponent implements OnInit, OnDestr
         this.users = [...payload];
       });
     const sub3 = this.userService.getUsersCount().subscribe(payload => this.usersCount = payload);
-    const sub4 = this.eventBusService.on<User>(Events.ADD_USER, (payload) => this.userService.addUser(payload));
+    const sub4 = this.eventBusService.on<User>(Events.ADD_USER, (payload) => {
+      if (this.users.some(u => u.email === payload.email)) {
+        this.snackBar.open('This email has been already used. Try Another.', null, { duration: 3 * 1000 });
+      } else {
+        this.eventBusService.emit(new EmitEvent(Events.CLOSE_INVITE_USER_POPUP));
+        this.userService.addUser(payload);
+      }
+    });
     const sub5 = this.eventBusService.on<number>(Events.REMOVE_USER, (payload) => this.userService.removeUser(payload));
 
     this.addSubscription(sub1);

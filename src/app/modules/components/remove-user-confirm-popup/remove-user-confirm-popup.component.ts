@@ -11,6 +11,7 @@ import { User } from '../../../shared/models/user.model';
 })
 export class RemoveUserConfirmPopupComponent implements OnInit {
   public selectedUser: User;
+  public occupiedEmails: string[];
 
   constructor(
     private eventBusService: EventBusService

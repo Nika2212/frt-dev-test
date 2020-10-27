@@ -38,6 +38,7 @@ export class SettingsComponent extends BaseComponent implements OnInit {
       }
 
       this.selectedUser = this.userService.getUser(id);
+      this.canUpdate = true;
 
       if (!this.selectedUser) {
         this.router.navigate(['dashboard']);
@@ -63,14 +64,25 @@ export class SettingsComponent extends BaseComponent implements OnInit {
   }
 
   public onUpdate(): void {
+    if (!this.canUpdate) {
+      return;
+    }
+
     this.userService.updateUser(this.newSelectedUser);
     this.getUser();
   }
 
   public validate(): void {
-    const validator = updateUserModelValidator.validate(this.newSelectedUser).error;
+    const validator = updateUserModelValidator.validate({
+      firstName: this.newSelectedUser.firstName,
+      lastName: this.newSelectedUser.lastName
+    }).error;
 
-    this.canUpdate = !!validator;
+    if (validator) {
+      this.canUpdate = false;
+    } else {
+      this.canUpdate = true;
+    }
   }
 
 }
