@@ -23,7 +23,11 @@ label {
 
 button {
   border: none;
-  outline-color: rgb(100, 169, 255, 0.2);
+  outline: none;
 
   cursor: pointer;
+}
+
+.v-none {
+  visibility: hidden !important;
 }

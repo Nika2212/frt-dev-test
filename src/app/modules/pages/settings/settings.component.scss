@@ -1,6 +1,8 @@
 @import 'src/assets/styles/mixins';
 
 .settings-component {
+  padding-top: 40px;
+
   width: 100%;
   height: auto;
 
@@ -28,8 +30,6 @@
           height: 100%;
 
           border-radius: 100%;
-
-          background-color: #979797;
 
           overflow: hidden;
 
@@ -75,6 +75,12 @@
           font-size: 16px;
           font-weight: 300;
           color: #000000;
+        }
+      }
+
+      &.disabled {
+        label {
+          opacity: 0.3;
         }
       }
     }
@@ -251,6 +257,14 @@
 
         &.super-user-row {
           height: 75px;
+
+          flex-shrink: 0;
+        }
+      }
+
+      &.disabled {
+        label, img, a, small {
+          opacity: .3;
         }
       }
     }

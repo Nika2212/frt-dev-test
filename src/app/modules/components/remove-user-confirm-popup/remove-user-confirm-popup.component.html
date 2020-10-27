@@ -1,6 +1,6 @@
 <div class="popup remove-user-confirm-popup">
   <div class="popup-abstract">
-    <button mat-icon-button>
+    <button (click)="onClose()" mat-icon-button>
       <mat-icon>close</mat-icon>
     </button>
   </div>
@@ -15,15 +15,15 @@
           <span class="material-icons">face</span>
         </div>
 
-        <label class="user-name">Samantha Standford</label>
+        <label class="user-name">{{ selectedUser?.firstName }} {{ selectedUser?.lastName }}</label>
 
-        <label class="user-status active">Active User</label>
+        <label [className]="selectedUser?.isActive ? 'user-status active' : 'user-status inactive'">{{ selectedUser?.isActive ? 'Active User' : 'Inactive User' }}</label>
       </div>
     </form>
   </div>
   <div class="popup-actions">
     <div class="action-row">
-      <button class="submit-btn secondary">Delete User</button>
+      <button (click)="onDelete()" class="submit-btn secondary">Delete User</button>
     </div>
   </div>
 </div>

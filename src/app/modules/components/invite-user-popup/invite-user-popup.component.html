@@ -1,6 +1,6 @@
 <div class="popup invite-user-popup">
   <div class="popup-abstract">
-    <button mat-icon-button>
+    <button (click)="onClose()" mat-icon-button>
       <mat-icon>close</mat-icon>
     </button>
   </div>
@@ -17,11 +17,11 @@
 
         <mat-form-field appearance="legacy">
           <mat-label>* First Name</mat-label>
-          <input matInput>
+          <input name="firstName" [(ngModel)]="newUserModel.firstName" (keyup)="validate()" matInput>
         </mat-form-field>
         <mat-form-field appearance="legacy">
           <mat-label>* Last Name</mat-label>
-          <input matInput>
+          <input name="lastName" [(ngModel)]="newUserModel.lastName" (keyup)="validate()" matInput>
         </mat-form-field>
       </div>
       <div class="form-row">
@@ -31,7 +31,7 @@
 
         <mat-form-field appearance="legacy">
           <mat-label>* Email</mat-label>
-          <input matInput>
+          <input name="email" [(ngModel)]="newUserModel.email" (keyup)="validate()" matInput>
         </mat-form-field>
       </div>
       <div class="form-row">
@@ -41,7 +41,7 @@
 
         <mat-form-field appearance="legacy">
           <mat-label>* Role</mat-label>
-          <mat-select>
+          <mat-select [(value)]="newUserModel.role" (valueChange)="validate()">
             <mat-option *ngFor="let role of availableRoles" [value]="role">
               {{ role }}
             </mat-option>
@@ -52,9 +52,9 @@
   </div>
   <div class="popup-actions">
     <div class="action-row">
-      <button class="submit-btn mat-primary">Send Invitation</button>
+      <button [disabled]="isInvalid" (click)="onSubmit()" class="submit-btn primary mat-primary">Send Invitation</button>
 
-      <small class="form-valid-message"></small>
+      <small class="form-valid-message" [className]="isInvalid ? 'form-valid-message invalid' : 'form-valid-message valid'">{{ message }}</small>
     </div>
   </div>
 </div>

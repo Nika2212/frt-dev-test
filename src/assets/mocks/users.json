@@ -9,7 +9,7 @@
         "lastName": "Maggio",
         "email": "Krystina.Quitzon@hotmail.com",
         "isActive": true,
-        "role": "USER",
+        "role": "User",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",
@@ -73,7 +73,7 @@
         "lastName": "Moen",
         "email": "Alexandria.Schamberger@gmail.com",
         "isActive": false,
-        "role": "USER",
+        "role": "User",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",
@@ -137,7 +137,7 @@
         "lastName": "Crist",
         "email": "Hermann66@hotmail.com",
         "isActive": true,
-        "role": "USER",
+        "role": "User",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",
@@ -201,7 +201,7 @@
         "lastName": "Nienow",
         "email": "Bernadette_Connelly@yahoo.com",
         "isActive": false,
-        "role": "ADMIN",
+        "role": "Admin",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",
@@ -265,7 +265,7 @@
         "lastName": "Wuckert",
         "email": "Lily67@yahoo.com",
         "isActive": false,
-        "role": "USER",
+        "role": "User",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",
@@ -329,7 +329,7 @@
         "lastName": "Kertzmann",
         "email": "Marielle61@hotmail.com",
         "isActive": true,
-        "role": "USER",
+        "role": "User",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",
@@ -393,7 +393,7 @@
         "lastName": "King",
         "email": "Waylon.Hoppe@yahoo.com",
         "isActive": false,
-        "role": "USER",
+        "role": "User",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",
@@ -457,7 +457,7 @@
         "lastName": "Spinka",
         "email": "Clifford_Zieme@gmail.com",
         "isActive": true,
-        "role": "USER",
+        "role": "User",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",
@@ -521,7 +521,7 @@
         "lastName": "Greenfelder",
         "email": "Adah_Swift16@gmail.com",
         "isActive": true,
-        "role": "USER",
+        "role": "User",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",
@@ -585,7 +585,7 @@
         "lastName": "Herzog",
         "email": "Kristoffer51@yahoo.com",
         "isActive": false,
-        "role": "USER",
+        "role": "User",
         "permissionGroup": [
           {
             "groupName": "Permission Group Name",

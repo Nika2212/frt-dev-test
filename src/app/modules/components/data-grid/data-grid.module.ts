@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataGridComponent } from './data-grid.component';
 import { MaterialModule } from '../../../shared/material.module';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -12,7 +13,8 @@ import { MaterialModule } from '../../../shared/material.module';
   ],
   imports: [
     CommonModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ]
 })
 export class DataGridModule { }

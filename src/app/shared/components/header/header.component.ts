@@ -24,15 +24,11 @@ export class HeaderComponent implements OnInit {
   private getPage(): void {
     this.router.events.pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((x: RouterEvent) => {
-          let url = '';
-
-          if (x.url === '/') {
-            url += '/dashboard';
-          } else {
-            url = x.url;
+          if (x.url === '/' || x.url.search('dashboard') > -1) {
+            this.currentPage = Pages.DASHBOARD;
+          } else if (x.url.search('settings') > -1) {
+            this.currentPage = Pages.SETTINGS;
           }
-
-          this.currentPage = url as Pages;
         }
       );
   }
@@ -45,10 +41,16 @@ export class HeaderComponent implements OnInit {
     this.getPage();
   }
 
+  public onUserAddClick(): void {
+    this.eventBusService.emit(new EmitEvent(Events.OPEN_INVITE_USER_POPUP));
+  }
+
   public onFilter(): void {
-    if (!this.filterString || this.filterString.trim().length === 0) {
-      return;
+    if (!this.filterString) {
+      this.filterString = '';
     }
+
+    this.filterString = this.filterString.toLowerCase().trim();
 
     this.eventBusService.emit(new EmitEvent(Events.FILTER_USERS, this.filterString));
   }

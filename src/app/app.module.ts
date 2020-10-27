@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { initDataResolverFactory } from './core/helpers/init-data-resolver-factory';
 import { UserService } from './core/services/user.service';
 import { EventBusService } from './core/services/event-bus.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { EventBusService } from './core/services/event-bus.service';
   providers: [
     UserService,
     EventBusService,
+    MatSnackBar,
 
     { provide: APP_INITIALIZER, useFactory: initDataResolverFactory, deps: [UserService], multi: true }
   ],

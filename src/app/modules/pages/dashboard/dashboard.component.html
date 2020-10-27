@@ -3,7 +3,14 @@
     <div class="row">
       <div class="col-xl-12">
         <div class="data-grid-container">
-          <frt-data-grid></frt-data-grid>
+          <frt-data-grid
+            [users]="users"
+            [usersCount]="usersCount"
+            [filterString]="filterString"
+            (onUserStatusChangeClick)="onUserStatusChange($event)"
+            (onUserSettingsClick)="onUserSettingsClick($event)"
+            (onUserDeleteClick)="onUserDeleteClick($event)">
+          </frt-data-grid>
         </div>
       </div>
     </div>

@@ -6,6 +6,7 @@ import { generateId } from '../helpers/generators';
 import { environment } from '../../../environments/environment';
 import { BaseResponse } from '../../shared/models/base-response.model';
 import { UsersContainer } from '../../shared/models/users-container.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Injectable()
 export class UserService {
@@ -13,7 +14,8 @@ export class UserService {
   private storedUsersCount: BehaviorSubject<number> = new BehaviorSubject<number>(0);
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private snackBar: MatSnackBar
   ) {}
 
   public getUsersFromServer(): Promise<void> {
@@ -43,6 +45,17 @@ export class UserService {
     return this.storedUsers;
   }
 
+  public getUser(id: number): User {
+    const users = this.storedUsers.value;
+    const user = users.find(u => u.id === id);
+
+    if (!user) {
+      return null;
+    } else {
+      return {...user};
+    }
+  }
+
   public getUsersCount(): Observable<number> {
     return this.storedUsersCount;
   }
@@ -54,8 +67,9 @@ export class UserService {
 
     user.id = generateId();
 
-    this.storedUsers.next([...previousUsers, user]);
+    this.storedUsers.next([{...user}, ...previousUsers]);
     this.storedUsersCount.next(currentUsersCount);
+    this.snackBar.open('User added successfully', null, {duration: 2 * 1000});
   }
 
   public userExists(id: number): boolean {
@@ -66,14 +80,12 @@ export class UserService {
 
   public updateUser(user: User): void {
     const previousUsers = this.storedUsers.value;
+    const oldUserIndex = previousUsers.findIndex(u => u.id === user.id);
 
-    for (let iteratedUser of previousUsers) {
-      if (iteratedUser.id === user.id) {
-        iteratedUser = user;
-      }
-    }
+    previousUsers[oldUserIndex] = user;
 
     this.storedUsers.next([...previousUsers]);
+    this.snackBar.open('User updated successfully', null, {duration: 2 * 1000});
   }
 
   public removeUser(id: number): void {
@@ -84,5 +96,6 @@ export class UserService {
 
     this.storedUsers.next([...currentUsers]);
     this.storedUsersCount.next(currentUsersCount);
+    this.snackBar.open('User removed successfully', null, {duration: 2 * 1000});
   }
 }

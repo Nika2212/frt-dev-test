@@ -15,35 +15,35 @@
       </div>
     </div>
     <div class="table-body">
-      <div *ngFor="let i of [1,2,3,4,5]" class="table-row">
+      <div *ngFor="let user of displayedUsers" class="table-row" [ngClass]="{'disabled' : !user.isActive}">
         <div class="table-col">
           <div class="user-information">
             <div class="user-avatar">
-              <img src="" alt="">
+              <img [src]="icons + 'avatar.png'" alt="">
             </div>
-            <label class="user-name">Danniel Blichman</label>
-            <label class="user-email">danniel.blichman@gmail.com</label>
+            <label class="user-name">{{ user.firstName }} {{ user.lastName }}</label>
+            <label class="user-email">{{ user.email }}</label>
           </div>
         </div>
         <div class="table-col">
           <div class="user-role">
-            <div class="badge">
+            <div *ngIf="user.role === 'Admin'" class="badge">
               <span class="material-icons">vpn_key</span>
             </div>
-            <label>ADMIN</label>
+            <label>{{ user.role }}</label>
           </div>
         </div>
         <div class="table-col">
           <div class="user-status">
-            <mat-slide-toggle color="primary"></mat-slide-toggle>
+            <mat-slide-toggle [ngModel]="user.isActive" (toggleChange)="onStatusChange(user.id)" color="primary"></mat-slide-toggle>
           </div>
         </div>
         <div class="table-col">
           <div class="user-actions">
-            <button mat-icon-button>
+            <button [disabled]="!user.isActive" [ngClass]="{'v-none' : !user.isActive}" (click)="onSettingsClick(user.id)" mat-icon-button>
               <mat-icon>settings</mat-icon>
             </button>
-            <button mat-icon-button>
+            <button [disabled]="!user.isActive" (click)="onRemoveClick(user.id)" mat-icon-button>
               <mat-icon>delete</mat-icon>
             </button>
           </div>
@@ -54,7 +54,7 @@
   <div class="grid-paginator">
     <div class="page-size-selector">
       <mat-form-field appearance="legacy">
-        <mat-select>
+        <mat-select [(value)]="paginator.pageSize" (valueChange)="onPageSizeChange()">
           <mat-option *ngFor="let size of [5, 10]" [value]="size">
             {{ size }}
           </mat-option>
@@ -63,14 +63,16 @@
       <label>Records on page</label>
     </div>
     <div class="page-index-selector">
-      <button mat-button>Previous</button>
+      <button [disabled]="paginator.isFirst()" (click)="onPrevious()" mat-button>Previous</button>
 
       <div class="pages">
-        <button mat-button><b>1</b></button>
-        <button mat-button><b>2</b></button>
+        <button
+          (click)="onPageChange(pageButton)"
+          *ngFor="let pageButton of paginator.pages"
+          [ngClass]="{'selected' : paginator.pageIndex === pageButton}" mat-button><b>{{ pageButton }}</b></button>
       </div>
 
-      <button mat-button>Next</button>
+      <button [disabled]="paginator.isLast()" (click)="onNext()" mat-button>Next</button>
     </div>
   </div>
 </div>

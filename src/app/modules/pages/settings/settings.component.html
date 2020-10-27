@@ -1,24 +1,24 @@
 <div class="settings-component">
-  <div class="container">
+  <div *ngIf="!isLoading" class="container">
     <div class="row">
       <div class="col-xl-4">
         <div class="setting-block">
-          <div class="user-general-information">
+          <div class="user-general-information" [ngClass]="{'disabled' : !newSelectedUser.isActive}">
             <div class="user-avatar">
-              <img src="" alt="">
+              <img [src]="icons + 'avatar.png'" alt="">
 
               <div class="badge">
                 <span class="material-icons">vpn_key</span>
               </div>
             </div>
             <div class="user-name">
-              <label>Danniel<br>Blichman</label>
+              <label>{{ selectedUser.firstName }}<br>{{ selectedUser.lastName }}</label>
             </div>
             <div class="user-email">
-              <label>sample@gmail.com</label>
+              <label>{{ selectedUser.email }}</label>
             </div>
 
-            <button class="main-action-btn invite-resent-btn">Resent the invite</button>
+            <button *ngIf="newSelectedUser.isActive" class="main-action-btn invite-resent-btn">Resent the invite</button>
           </div>
         </div>
       </div>
@@ -30,28 +30,28 @@
 
           <form class="user-details-form">
             <div class="user-status">
-              <mat-slide-toggle color="primary"></mat-slide-toggle>
-              <label>The user is <b>Active</b></label>
+              <mat-slide-toggle [(ngModel)]="newSelectedUser.isActive" name="isActive" color="primary"></mat-slide-toggle>
+              <label>The user is <b>{{ newSelectedUser.isActive ? 'Active' : 'Inactive' }}</b></label>
             </div>
 
             <div class="form-row">
               <mat-form-field appearance="legacy">
                 <mat-label>* First Name</mat-label>
-                <input matInput>
+                <input [disabled]="!newSelectedUser.isActive" [(ngModel)]="newSelectedUser.firstName" name="firstName" matInput>
               </mat-form-field>
             </div>
 
             <div class="form-row">
               <mat-form-field appearance="legacy">
                 <mat-label>* Last Name</mat-label>
-                <input matInput>
+                <input matInput [disabled]="!newSelectedUser.isActive" [(ngModel)]="newSelectedUser.lastName" name="lastName">
               </mat-form-field>
             </div>
 
             <div class="form-row">
               <mat-form-field appearance="legacy">
                 <mat-label>* Role</mat-label>
-                <mat-select>
+                <mat-select [disabled]="!newSelectedUser.isActive" [(value)]="newSelectedUser.role">
                   <mat-option *ngFor="let role of availableRoles" [value]="role">
                     {{ role }}
                   </mat-option>
@@ -59,7 +59,7 @@
               </mat-form-field>
             </div>
 
-            <button class="main-action-btn update-btn">Save Changes</button>
+            <button *ngIf="newSelectedUser.isActive" (click)="onUpdate()" class="main-action-btn update-btn">Save Changes</button>
           </form>
         </div>
       </div>
@@ -67,36 +67,28 @@
         <div class="setting-block permission-block">
           <div class="block-title">
             <h3>Permissions</h3>
-            <label class="info">Admin</label>
+            <label class="info">{{ newSelectedUser.role }}</label>
           </div>
 
-          <div class="user-permissions-form">
+          <div class="user-permissions-form" [ngClass]="{'disabled' : !newSelectedUser.isActive}">
             <div class="permission-form-row super-user-row">
               <label><b>Super Admin</b></label>
-              <mat-slide-toggle color="warn"></mat-slide-toggle>
+              <mat-slide-toggle [disabled]="!newSelectedUser.isActive" color="warn"></mat-slide-toggle>
             </div>
 
-            <div *ngFor="let i of [1, 2, 3]" class="permission-form-row">
+            <div *ngFor="let permissionGroup of newSelectedUser.permissionGroup" class="permission-form-row">
               <div #group class="permission-group">
                 <div class="permission-group-heading">
                   <div class="dropdown-icon">
                     <span class="material-icons">keyboard_arrow_right</span>
                   </div>
-                  <label frtExpander [list]="group" class="permission-name">Permission Group 1</label>
-                  <mat-slide-toggle color="warn"></mat-slide-toggle>
+                  <label frtExpander [list]="group" class="permission-name">{{ permissionGroup.groupName }}</label>
+                  <mat-slide-toggle [disabled]="!newSelectedUser.isActive" [(ngModel)]="permissionGroup.groupState" color="warn"></mat-slide-toggle>
                 </div>
                 <ul class="permission-group-list">
-                  <li class="permission-group-list-item">
-                    <label>Permission 1</label>
-                    <mat-slide-toggle color="warn"></mat-slide-toggle>
-                  </li>
-                  <li class="permission-group-list-item">
-                    <label>Permission 2</label>
-                    <mat-slide-toggle color="warn"></mat-slide-toggle>
-                  </li>
-                  <li class="permission-group-list-item">
-                    <label>Permission 3</label>
-                    <mat-slide-toggle color="warn"></mat-slide-toggle>
+                  <li *ngFor="let permission of permissionGroup.permissions" class="permission-group-list-item">
+                    <label>{{ permission.permissionName }}</label>
+                    <mat-slide-toggle [disabled]="!newSelectedUser.isActive" [(ngModel)]="permission.permissionState" color="warn"></mat-slide-toggle>
                   </li>
                 </ul>
               </div>
@@ -106,4 +98,5 @@
       </div>
     </div>
   </div>
+
 </div>

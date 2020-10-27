@@ -5,6 +5,7 @@ import { SettingsRoutingModule } from './settings-routing.module';
 import { MaterialModule } from '../../../shared/material.module';
 import { SharedModule } from '../../../shared/shared.module';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [SettingsComponent],
