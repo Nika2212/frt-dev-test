@@ -37,14 +37,14 @@
             <div class="form-row">
               <mat-form-field appearance="legacy">
                 <mat-label>* First Name</mat-label>
-                <input [disabled]="!newSelectedUser.isActive" [(ngModel)]="newSelectedUser.firstName" name="firstName" matInput>
+                <input [disabled]="!newSelectedUser.isActive" [(ngModel)]="newSelectedUser.firstName" (keyup)="validate()" name="firstName" matInput>
               </mat-form-field>
             </div>
 
             <div class="form-row">
               <mat-form-field appearance="legacy">
                 <mat-label>* Last Name</mat-label>
-                <input matInput [disabled]="!newSelectedUser.isActive" [(ngModel)]="newSelectedUser.lastName" name="lastName">
+                <input matInput [disabled]="!newSelectedUser.isActive" [(ngModel)]="newSelectedUser.lastName" (keyup)="validate()" name="lastName">
               </mat-form-field>
             </div>
 
