@@ -5,6 +5,7 @@ import { UserService } from '../../../core/services/user.service';
 import { User } from '../../../shared/models/user.model';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { BaseComponent } from '../../../core/helpers/base-component';
+import { updateUserModelValidator } from '../../../core/helpers/validators';
 
 @Component({
   selector: 'frt-settings',
@@ -16,6 +17,7 @@ export class SettingsComponent extends BaseComponent implements OnInit {
   public selectedUser: User;
   public newSelectedUser: User;
   public isLoading: boolean;
+  public canUpdate: boolean;
 
   constructor(
     private router: Router,
@@ -63,6 +65,12 @@ export class SettingsComponent extends BaseComponent implements OnInit {
   public onUpdate(): void {
     this.userService.updateUser(this.newSelectedUser);
     this.getUser();
+  }
+
+  public validate(): void {
+    const validator = updateUserModelValidator.validate(this.newSelectedUser).error;
+
+    this.canUpdate = !!validator;
   }
 
 }

@@ -118,6 +118,8 @@ export class DataGridComponent extends BaseComponent implements OnInit, OnChange
   }
 
   public onPageSizeChange(): void {
+    this.paginator.pageIndex = 1;
+
     this.updateGrid();
   }
 
