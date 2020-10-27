@@ -8,10 +8,17 @@
   }
 
   .content-container {
-    padding-top: 63px;
+    padding-top: 20px;
     padding-bottom: 63px;
 
     width: 100%;
     height: calc(100% - 211px);
+  }
+
+  .modals-container {
+    position: absolute;
+
+    left: 0;
+    top: 0;
   }
 }

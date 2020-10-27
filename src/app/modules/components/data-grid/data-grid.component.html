@@ -1,1 +1,76 @@
-<p>data-grid works!</p>
+<div class="grid">
+  <div class="grid-table">
+    <div class="table-header">
+      <div class="table-col">
+        <label>USER</label>
+      </div>
+      <div class="table-col">
+        <label>ROLE</label>
+      </div>
+      <div class="table-col">
+        <label>STATUS</label>
+      </div>
+      <div class="table-col">
+        <label>ACTIONS</label>
+      </div>
+    </div>
+    <div class="table-body">
+      <div *ngFor="let i of [1,2,3,4,5]" class="table-row">
+        <div class="table-col">
+          <div class="user-information">
+            <div class="user-avatar">
+              <img src="" alt="">
+            </div>
+            <label class="user-name">Danniel Blichman</label>
+            <label class="user-email">danniel.blichman@gmail.com</label>
+          </div>
+        </div>
+        <div class="table-col">
+          <div class="user-role">
+            <div class="badge">
+              <span class="material-icons">vpn_key</span>
+            </div>
+            <label>ADMIN</label>
+          </div>
+        </div>
+        <div class="table-col">
+          <div class="user-status">
+            <mat-slide-toggle color="primary"></mat-slide-toggle>
+          </div>
+        </div>
+        <div class="table-col">
+          <div class="user-actions">
+            <button mat-icon-button>
+              <mat-icon>settings</mat-icon>
+            </button>
+            <button mat-icon-button>
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-paginator">
+    <div class="page-size-selector">
+      <mat-form-field appearance="legacy">
+        <mat-select>
+          <mat-option *ngFor="let size of [5, 10]" [value]="size">
+            {{ size }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <label>Records on page</label>
+    </div>
+    <div class="page-index-selector">
+      <button mat-button>Previous</button>
+
+      <div class="pages">
+        <button mat-button><b>1</b></button>
+        <button mat-button><b>2</b></button>
+      </div>
+
+      <button mat-button>Next</button>
+    </div>
+  </div>
+</div>

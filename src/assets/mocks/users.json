@@ -1,0 +1,649 @@
+{
+  "isError": false,
+  "message": "",
+  "data": {
+    "items": [
+      {
+        "id": 666817147,
+        "firstName": "Franco",
+        "lastName": "Maggio",
+        "email": "Krystina.Quitzon@hotmail.com",
+        "isActive": true,
+        "role": "USER",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 164186627,
+        "firstName": "Scottie",
+        "lastName": "Moen",
+        "email": "Alexandria.Schamberger@gmail.com",
+        "isActive": false,
+        "role": "USER",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 268634786,
+        "firstName": "Kim",
+        "lastName": "Crist",
+        "email": "Hermann66@hotmail.com",
+        "isActive": true,
+        "role": "USER",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 368566281,
+        "firstName": "Kory",
+        "lastName": "Nienow",
+        "email": "Bernadette_Connelly@yahoo.com",
+        "isActive": false,
+        "role": "ADMIN",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 732383582,
+        "firstName": "Gavin",
+        "lastName": "Wuckert",
+        "email": "Lily67@yahoo.com",
+        "isActive": false,
+        "role": "USER",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 412765894,
+        "firstName": "Alessia",
+        "lastName": "Kertzmann",
+        "email": "Marielle61@hotmail.com",
+        "isActive": true,
+        "role": "USER",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 193436874,
+        "firstName": "Thora",
+        "lastName": "King",
+        "email": "Waylon.Hoppe@yahoo.com",
+        "isActive": false,
+        "role": "USER",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 523113160,
+        "firstName": "Melyna",
+        "lastName": "Spinka",
+        "email": "Clifford_Zieme@gmail.com",
+        "isActive": true,
+        "role": "USER",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 433208745,
+        "firstName": "Darien",
+        "lastName": "Greenfelder",
+        "email": "Adah_Swift16@gmail.com",
+        "isActive": true,
+        "role": "USER",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": 569613033,
+        "firstName": "Delta",
+        "lastName": "Herzog",
+        "email": "Kristoffer51@yahoo.com",
+        "isActive": false,
+        "role": "USER",
+        "permissionGroup": [
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          },
+          {
+            "groupName": "Permission Group Name",
+            "groupState": false,
+            "permissions": [
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              },
+              {
+                "permissionName": "Permission Name",
+                "permissionState": false
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "count": 10
+  }
+}

@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, NavigationEnd, Router, RouterEvent } from '@angular/router';
+import { NavigationEnd, Router, RouterEvent } from '@angular/router';
 import { Pages } from '../../../core/enums/pages';
 import { filter } from 'rxjs/operators';
+import { EventBusService } from '../../../core/services/event-bus.service';
+import { EmitEvent } from '../../models/emit-event.model';
+import { Events } from '../../../core/enums/events';
 
 @Component({
   selector: 'frt-header',
@@ -10,16 +13,26 @@ import { filter } from 'rxjs/operators';
 })
 export class HeaderComponent implements OnInit {
   public currentPage: Pages;
+  public filterString: string;
 
   constructor(
-    private router: Router
+    private router: Router,
+    private eventBusService: EventBusService
   ) {
   }
 
   private getPage(): void {
     this.router.events.pipe(filter((event) => event instanceof NavigationEnd))
       .subscribe((x: RouterEvent) => {
-          this.currentPage = x.url as Pages;
+          let url = '';
+
+          if (x.url === '/') {
+            url += '/dashboard';
+          } else {
+            url = x.url;
+          }
+
+          this.currentPage = url as Pages;
         }
       );
   }
@@ -32,4 +45,11 @@ export class HeaderComponent implements OnInit {
     this.getPage();
   }
 
+  public onFilter(): void {
+    if (!this.filterString || this.filterString.trim().length === 0) {
+      return;
+    }
+
+    this.eventBusService.emit(new EmitEvent(Events.FILTER_USERS, this.filterString));
+  }
 }

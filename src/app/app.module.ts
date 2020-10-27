@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { APP_INITIALIZER, NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +8,10 @@ import { ModalModule } from './shared/components/modal/modal.module';
 import { InviteUserPopupModule } from './modules/components/invite-user-popup/invite-user-popup.module';
 import { RemoveUserConfirmPopupModule } from './modules/components/remove-user-confirm-popup/remove-user-confirm-popup.module';
 import { HeaderModule } from './shared/components/header/header.module';
+import { HttpClientModule } from '@angular/common/http';
+import { initDataResolverFactory } from './core/helpers/init-data-resolver-factory';
+import { UserService } from './core/services/user.service';
+import { EventBusService } from './core/services/event-bus.service';
 
 @NgModule({
   declarations: [
@@ -20,9 +24,15 @@ import { HeaderModule } from './shared/components/header/header.module';
     HeaderModule,
     ModalModule,
     InviteUserPopupModule,
-    RemoveUserConfirmPopupModule
+    RemoveUserConfirmPopupModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    UserService,
+    EventBusService,
+
+    { provide: APP_INITIALIZER, useFactory: initDataResolverFactory, deps: [UserService], multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

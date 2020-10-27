@@ -37,6 +37,11 @@
 
     .filter-field {
       margin-left: auto;
+
+      mat-icon {
+        cursor: pointer;
+        user-select: none;
+      }
     }
   }
 }

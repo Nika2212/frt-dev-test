@@ -7,5 +7,13 @@
     <router-outlet></router-outlet>
   </div>
 
-<!--  <frt-modal></frt-modal>-->
+  <div *ngIf="currentPopup !== 'NONE'" class="modals-container">
+    <frt-modal *ngIf="currentPopup === 'INVITE_USER_POPUP'">
+      <frt-invite-user-popup></frt-invite-user-popup>
+    </frt-modal>
+
+    <frt-modal *ngIf="currentPopup === 'REMOVE_USER_CONFIRM_POPUP'">
+      <frt-remove-user-confirm-popup></frt-remove-user-confirm-popup>
+    </frt-modal>
+  </div>
 </div>
